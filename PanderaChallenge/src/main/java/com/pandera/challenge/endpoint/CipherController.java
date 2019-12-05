@@ -24,12 +24,12 @@ public class CipherController {
 	public CipherResponse encipher(
 			@PathVariable String cipher,
 			@RequestParam(value="plaintext") String plaintext, 
-			@RequestParam(value="shifts", defaultValue="0") int shifts) {
+			@RequestParam(value="shifts", required=false) Integer shifts) {
 		
 		CipherStrategy cs = getStrategy(cipher);
 		CipherResponse response;
 		
-		if (shifts != 0) {
+		if (shifts != null) {
 			shiftProcessing(cs, shifts);
 			
 			response = new ShiftCipherResponse(cipher, plaintext, cs.encipher(plaintext), shifts);

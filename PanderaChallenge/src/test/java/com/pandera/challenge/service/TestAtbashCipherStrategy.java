@@ -2,7 +2,6 @@ package com.pandera.challenge.service;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class TestAtbashCipherStrategy {
