@@ -28,6 +28,7 @@ public class SwaggerConfig {
 		return or(regex("/.*/encipher"), regex("/.*/decipher"));
 	}
 	
+	@SuppressWarnings("deprecation")
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Pandera Challenge")
 				.description("Pandera Cipher Challenge API")

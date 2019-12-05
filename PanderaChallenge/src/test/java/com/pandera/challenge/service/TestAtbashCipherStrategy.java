@@ -8,7 +8,7 @@ public class TestAtbashCipherStrategy {
 	private static final String PLAINTEXT = "THEXQUICKXBROWNXFOXXJUMPSXOVERXTHEXLAZYXDOG";
 	private static final String CIPHERTEXT = "GSVCJFRXPCYILDMCULCCQFNKHCLEVICGSVCOZABCWLT";
 	
-	CipherStrategy cipher = new AtbashCipherStrategy();
+	private CipherStrategy cipher = new AtbashCipherStrategy();
 
 	@Test
 	public void testEncipher() {		

@@ -44,12 +44,12 @@ public class CipherController {
 	public CipherResponse decipher(
 			@PathVariable String cipher,
 			@RequestParam(value="ciphertext") String ciphertext,
-			@RequestParam(value="shifts", defaultValue="0") int shifts) {
+			@RequestParam(value="shifts", required=false) Integer shifts) {
 		
 		CipherStrategy cs = getStrategy(cipher);
 		CipherResponse response;
 		
-		if (shifts != 0) {
+		if (shifts != null) {
 			shiftProcessing(cs, shifts);
 			
 			response = new ShiftCipherResponse(cipher, cs.decipher(ciphertext), ciphertext, shifts);

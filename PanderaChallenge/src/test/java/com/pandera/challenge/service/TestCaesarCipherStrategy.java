@@ -9,7 +9,7 @@ public class TestCaesarCipherStrategy {
 	private static final String PLAINTEXT = "THEXQUICKXBROWNXFOXXJUMPSXOVERXTHEXLAZYXDOG";
 	private static final String CIPHERTEXT = "QEBUNRFZHUYOLTKUCLUUGRJMPULSBOUQEBUIXWVUALD";
 	
-	ShiftStrategySupport cipher = new CaesarCipherStrategy();
+	private ShiftStrategySupport cipher = new CaesarCipherStrategy();
 	
 	@Before
 	public void setUp() {
@@ -24,6 +24,12 @@ public class TestCaesarCipherStrategy {
 	@Test
 	public void testDecipher() {
 		assertTrue(PLAINTEXT.equals(cipher.decipher(CIPHERTEXT)));
+	}
+	
+	@Test
+	public void testCipherZeroShifts() {
+		cipher.setShifts(0);
+		assertTrue(PLAINTEXT.equals(cipher.encipher(PLAINTEXT)));
 	}
 
 }
